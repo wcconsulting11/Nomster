@@ -38,11 +38,14 @@
 
 
 
-
+<div class="col-10 offset-1">
+<div class="clear"></div>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Add a comment
+  Add a Comment
 </button>
+</div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -52,6 +55,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
+
         <h4 class="Add a comment" id="myModalLabel">Comment</h4>
       </div>
 
@@ -62,9 +66,9 @@
         </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <%= f.submit "Save Comment", class: 'btn btn-primary' %>
       </div>
-        
+       
       <% end %>
       </div>
       
@@ -72,10 +76,7 @@
   </div>
 </div>
 
-<div class="col-10 offset-1">
-<h1 class="float-left">Comments</h1>
 
-</div>
 
 <div class="clear"></div>
 
@@ -97,19 +98,43 @@
 <br />
 <br />
 
+
 <div class="col-10 offset-1">
-<h1 class="float-left">Picture</h1>
+<div class="clear"></div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
+  Add a Photo
+</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+
+        <h4 class="Add a photo id="myModalLabel">Photo</h4>
+      </div>
+
+<div class="col-10 offset-1">
+<h1 class="float-left">Photo</h1>
 <div class="clear"></div>
 <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>  
 <%= f.input :picture %>
 <%= f.submit "Upload Photo", class: 'btn btn-primary' %>
 
-    
-
+<br />
+<br />
 <% end %>
 </div>
+</div>
+</div>
+</div>
+</div>
 
- 
 
 
 </end>
