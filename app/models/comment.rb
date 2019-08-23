@@ -1,7 +1,7 @@
 class Comment < ApplicationRecord
     belongs_to :user
     belongs_to :place
-    belongs_to :photo
+    after_create :send_comment_email
 
     RATINGS = {
         'one star': '1_star',
@@ -15,4 +15,8 @@ class Comment < ApplicationRecord
    def humanized_rating
     RATINGS.invert[self.rating]
    end
-end
+
+   def send_comment_email
+    NotificationMailer.comment_added(self).deliver_now
+   end
+  end  
