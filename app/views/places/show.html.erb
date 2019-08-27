@@ -2,7 +2,7 @@
 <h1><%= @place.name %></h1>
 <i><%= @place.address %></i>
 
-<br/><br/>
+<br /><br />
 
 <p><%= @place.description %></p>
 
@@ -68,7 +68,7 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <%= f.submit "Save Comment", class: 'btn btn-primary' %>
       </div>
-       
+      
       <% end %>
       </div>
       
@@ -92,6 +92,8 @@
   <small><%= comment.user.email %></small>
  </blockquote>
 </div>
+</div>
+
 <% end %>
 </div>
 
@@ -134,5 +136,3 @@
 </div>
 </div>
 
-
-</end>
