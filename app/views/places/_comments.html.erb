@@ -1,0 +1,23 @@
+<h3>Comments</h3>
+<% @place.comments.each do |comment| %>
+    <% next if comment.message.empty? %>
+    <div class="row">
+        <div class="col-12 col-sm-12">
+        <div class="comment">
+            <blockquote>
+            <% if comment.rating.present? %>
+                <% comment.get_stars.each do |star| %>
+                    <% if star == 1 then %>
+                        <span class="star">*</span>
+                    <% else %>
+                        <span class="black-star">*</span>
+                    <%end %>
+                <% end %>
+            <% end %>
+            <%= comment.message %>
+            <small><%= comment.user.email %></small>
+            </blockquote>
+        </div>
+        </div>
+    </div>
+<% end %>

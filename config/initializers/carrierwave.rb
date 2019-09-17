@@ -1,6 +1,6 @@
 # config/initializers/carrierwave.rb
 CarrierWave.configure do |config|
-  config.root = Rails.root.join('tmp') # adding these...
+  config.root = Rails.root.join('public') # adding these...
   config.cache_dir = 'carrierwave' # ...two lines
   config.fog_provider = 'fog/aws'                        # required
   config.fog_public = false
